@@ -1,0 +1,4 @@
+#Fri Mar 29 02:02:02 IST 2019
+base.0=/home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/build/intermediates/transforms/dexMerger/debug/0
+renamed.0=classes.dex
+file.0=/home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex
