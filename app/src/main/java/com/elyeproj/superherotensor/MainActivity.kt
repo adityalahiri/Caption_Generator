@@ -1,18 +1,35 @@
 package com.elyeproj.superherotensor
 
+import android.Manifest
+import android.content.ContextWrapper
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.os.Environment
+import android.content.Context
+import android.net.Uri
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.elyeproj.superherotensor.tensorflow.Classifier
 import com.elyeproj.superherotensor.tensorflow.TensorFlowImageClassifier
 import com.wonderkiln.camerakit.CameraKitImage
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.experimental.Job
 import kotlinx.coroutines.experimental.launch
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.OutputStream
+import java.util.*
+
+private const val REQUEST_PERMISSIONS = 1
 
 class MainActivity : AppCompatActivity() {
+
 
     companion object {
         private const val TAG = "MainActivity"
@@ -29,9 +46,19 @@ class MainActivity : AppCompatActivity() {
     private var classifier: Classifier? = null
     private var initializeJob: Job? = null
 
+    private fun File.writeBitmap(bitmap: Bitmap, format: Bitmap.CompressFormat, quality: Int) {
+        outputStream().use{ out->
+            bitmap.compress(format, quality, out)
+            out.flush()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        requestPermissions()
+
         initializeTensorClassifier()
 
         toggleButton.setOnClickListener {
@@ -47,9 +74,30 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+    private fun requestPermissions() {
+        ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                REQUEST_PERMISSIONS)
+    }
+
+    private fun checkPermissions() {
+        if (arePermissionAlreadyGranted()) {
+
+        } else {
+            requestPermissions()
+        }
+    }
+
+    private fun arePermissionAlreadyGranted() =
+            ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+
     private fun onImageCaptured(it: CameraKitImage) {
         val bitmap = Bitmap.createScaledBitmap(it.bitmap, INPUT_WIDTH, INPUT_HEIGHT, false)
         showCapturedImage(bitmap)
+
+        saveImageToExternalStorage(bitmap)
+
 
         classifier?.let {
             try {
@@ -60,6 +108,42 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
+    // Method to save an image to external storage
+    private fun saveImageToExternalStorage(bitmap:Bitmap):Uri{
+        // Get the external storage directory path
+        val path = Environment.getExternalStorageDirectory().toString()
+
+        // Create a file to save the image
+        val file = File(path, "${UUID.randomUUID()}.jpg")
+
+        try {
+            // Get the file output stream
+            val stream: OutputStream = FileOutputStream(file)
+
+            // Compress the bitmap
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
+
+            // Flush the output stream
+            stream.flush()
+
+            // Close the output stream
+            stream.close()
+            toast("Image saved successful.")
+        } catch (e: IOException){ // Catch the exception
+            e.printStackTrace()
+            toast("Error to save image.")
+        }
+
+        // Return the saved image path to uri
+        return Uri.parse(file.absolutePath)
+    }
+
+    fun Context.toast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
 
     private fun showRecognizedResult(results: MutableList<Classifier.Recognition>) {
         runOnUiThread {
