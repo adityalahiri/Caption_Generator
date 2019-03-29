@@ -33,6 +33,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initializeTensorClassifier()
+
+        toggleButton.setOnClickListener {
+
+            cameraView.toggleFacing()
+        }
+
         buttonRecognize.setOnClickListener {
             setVisibilityOnCaptured(false)
             cameraView.captureImage {
