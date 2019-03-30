@@ -1,5 +1,4 @@
 anger
-contempt
 disgust
 fear
 happiness

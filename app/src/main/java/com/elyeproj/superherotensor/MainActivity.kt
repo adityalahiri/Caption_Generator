@@ -4,13 +4,11 @@ import android.Manifest
 import android.content.ContextWrapper
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.os.Bundle
 import android.os.Environment
 import android.content.Context
 import android.net.Uri
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -25,6 +23,13 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.io.OutputStream
 import java.util.*
+import android.content.Intent
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+
+import java.util.ArrayList
+import java.util.HashMap
+
 
 private const val REQUEST_PERMISSIONS = 1
 
@@ -33,8 +38,8 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "MainActivity"
-        private const val INPUT_WIDTH = 224
-        private const val INPUT_HEIGHT = 224
+        private const val INPUT_WIDTH = 128
+        private const val INPUT_HEIGHT = 128
         private const val IMAGE_MEAN = 128
         private const val IMAGE_STD = 128f
         private const val INPUT_NAME = "Placeholder"
@@ -46,6 +51,22 @@ class MainActivity : AppCompatActivity() {
     private var classifier: Classifier? = null
     private var initializeJob: Job? = null
 
+
+    internal var quotes: HashMap<String, ArrayList<String>> =  HashMap<String, ArrayList<String>>()
+    internal var happinessQuotes = ArrayList<String>()
+    internal var sadQuotes = ArrayList<String>()
+    internal var disgustQuotes = ArrayList<String>()
+    internal var neutralQuotes = ArrayList<String>()
+    internal var fearQuotes = ArrayList<String>()
+    internal var surpriseQuotes = ArrayList<String>()
+    internal var angerQuotes = ArrayList<String>()
+
+
+
+
+
+
+
     private fun File.writeBitmap(bitmap: Bitmap, format: Bitmap.CompressFormat, quality: Int) {
         outputStream().use{ out->
             bitmap.compress(format, quality, out)
@@ -56,6 +77,57 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        happinessQuotes.add("Time you enjoy wasting is not wasted time")
+        happinessQuotes.add("Count your age by friends, not years. Count your life by smiles, not tears")
+        happinessQuotes.add("No medicine cures what happiness cannot")
+        happinessQuotes.add("I'd far rather be happy than right any day")
+        happinessQuotes.add("With mirth and laughter let old wrinkles come")
+        sadQuotes.add("Some days are just bad days, that's all. You have to experience sadness to know happiness, and I remind myself that not every day is going to be a good day, that's just the way it is!")
+        sadQuotes.add("Tears come from the heart and not from the brain")
+        sadQuotes.add("It's sad when someone you know becomes someone you knew")
+        sadQuotes.add("First, accept sadness. Realize that without losing, winning isn't so great")
+        sadQuotes.add("Tears are nature's lotion for the eyes. The eyes see better for being washed by them")
+        disgustQuotes.add("I am hard to disgust, but a pretentious poet can do it")
+        disgustQuotes.add("Disgusting are not men but their behaviours")
+        disgustQuotes.add("All those big words produce disgust today")
+        disgustQuotes.add("Love is a disease")
+        disgustQuotes.add("a")
+        neutralQuotes.add("b")
+        neutralQuotes.add("c")
+        neutralQuotes.add("d")
+        neutralQuotes.add("e")
+        neutralQuotes.add("f")
+        fearQuotes.add("g")
+        fearQuotes.add("h")
+        fearQuotes.add("i")
+        fearQuotes.add("j")
+        fearQuotes.add("k")
+        surpriseQuotes.add("l")
+        surpriseQuotes.add("m")
+        surpriseQuotes.add("n")
+        surpriseQuotes.add("o")
+        surpriseQuotes.add("p")
+        surpriseQuotes.add("q")
+        angerQuotes.add("r")
+        angerQuotes.add("s")
+        angerQuotes.add("t")
+        angerQuotes.add("u")
+        angerQuotes.add("v")
+        quotes.put("happiness",happinessQuotes)
+        quotes.put("sadness",sadQuotes)
+        quotes.put("disgust",disgustQuotes)
+        quotes.put("fear",fearQuotes)
+        quotes.put("neutral",neutralQuotes)
+        quotes.put("surprise",surpriseQuotes)
+        quotes.put("anger",angerQuotes)
+
+
+
+
+
+
 
         requestPermissions()
 
@@ -151,13 +223,10 @@ class MainActivity : AppCompatActivity() {
             if (results.isEmpty()) {
                 textResult.text = getString(R.string.result_no_hero_found)
             } else {
-                val hero = results[0].title
+                val emotion = results[0].title
                 val confidence = results[0].confidence
-                textResult.text = when {
-                    confidence > 0.95 -> getString(R.string.result_confident_hero_found, hero)
-                    confidence > 0.85 -> getString(R.string.result_think_hero_found, hero)
-                    else -> getString(R.string.result_maybe_hero_found, hero)
-                }
+                val i = Math.random().toInt() * 5
+                textResult.text = quotes[emotion]?.get(i)
             }
         }
     }
