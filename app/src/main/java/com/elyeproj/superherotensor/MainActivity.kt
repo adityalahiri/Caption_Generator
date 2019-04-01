@@ -18,14 +18,11 @@ import com.wonderkiln.camerakit.CameraKitImage
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.experimental.Job
 import kotlinx.coroutines.experimental.launch
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
-import java.io.OutputStream
 import java.util.*
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import java.io.*
 
 import java.util.ArrayList
 import java.util.HashMap
@@ -81,42 +78,47 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        happinessQuotes.add("Time you enjoy wasting is not wasted time")
-        happinessQuotes.add("Count your age by friends, not years. Count your life by smiles, not tears")
-        happinessQuotes.add("No medicine cures what happiness cannot")
-        happinessQuotes.add("I'd far rather be happy than right any day")
-        happinessQuotes.add("With mirth and laughter let old wrinkles come")
-        sadQuotes.add("Some days are just bad days, that's all. You have to experience sadness to know happiness, and I remind myself that not every day is going to be a good day, that's just the way it is!")
-        sadQuotes.add("Tears come from the heart and not from the brain")
-        sadQuotes.add("It's sad when someone you know becomes someone you knew")
-        sadQuotes.add("First, accept sadness. Realize that without losing, winning isn't so great")
-        sadQuotes.add("Tears are nature's lotion for the eyes. The eyes see better for being washed by them")
-        disgustQuotes.add("I am hard to disgust, but a pretentious poet can do it")
-        disgustQuotes.add("Disgusting are not men but their behaviours")
-        disgustQuotes.add("All those big words produce disgust today")
-        disgustQuotes.add("Love is a disease")
-        disgustQuotes.add("a")
-        neutralQuotes.add("b")
-        neutralQuotes.add("c")
-        neutralQuotes.add("d")
-        neutralQuotes.add("e")
-        neutralQuotes.add("f")
-        fearQuotes.add("g")
-        fearQuotes.add("h")
-        fearQuotes.add("i")
-        fearQuotes.add("j")
-        fearQuotes.add("k")
-        surpriseQuotes.add("l")
-        surpriseQuotes.add("m")
-        surpriseQuotes.add("n")
-        surpriseQuotes.add("o")
-        surpriseQuotes.add("p")
-        surpriseQuotes.add("q")
-        angerQuotes.add("r")
-        angerQuotes.add("s")
-        angerQuotes.add("t")
-        angerQuotes.add("u")
-        angerQuotes.add("v")
+        try {
+            val inputStream:InputStream = assets.open("happy_only.txt")
+            val inputStreamReader = InputStreamReader(inputStream)
+            val sb = StringBuilder()
+            var line: String?
+            val br = BufferedReader(inputStreamReader)
+            line = br.readLine()
+            while (br.readLine() != null) {
+                sb.append(line)
+                line = br.readLine()
+                happinessQuotes.add(line)
+            }
+            br.close()
+            Log.d(TAG,sb.toString())
+        } catch (e:Exception){
+            Log.d(TAG, e.toString())
+        }
+
+        try {
+            val inputStream:InputStream = assets.open("inspirational_only.txt")
+            val inputStreamReader = InputStreamReader(inputStream)
+            val sb = StringBuilder()
+            var line: String?
+            val br = BufferedReader(inputStreamReader)
+            line = br.readLine()
+            while (br.readLine() != null) {
+                sb.append(line)
+                line = br.readLine()
+                surpriseQuotes.add(line)
+                sadQuotes.add(line)
+                angerQuotes.add(line)
+                neutralQuotes.add(line)
+                fearQuotes.add(line)
+                disgustQuotes.add(line)
+            }
+            br.close()
+            Log.d(TAG,sb.toString())
+        } catch (e:Exception){
+            Log.d(TAG, e.toString())
+        }
+
         quotes.put("happiness",happinessQuotes)
         quotes.put("sadness",sadQuotes)
         quotes.put("disgust",disgustQuotes)
@@ -126,16 +128,11 @@ class MainActivity : AppCompatActivity() {
         quotes.put("anger",angerQuotes)
 
 
-
-
-
-
-
         requestPermissions()
 
         initializeTensorClassifier()
 
-        toggleButton.setOnClickListener {
+        switch1.setOnClickListener {
 
             cameraView.toggleFacing()
         }
@@ -226,8 +223,9 @@ class MainActivity : AppCompatActivity() {
                 textResult.text = getString(R.string.result_no_hero_found)
             } else {
                 val emotion = results[0].title
+
                 val confidence = results[0].confidence
-                val i = Math.random().toInt() * 5
+                val i = (1..10).shuffled().first()
                 val txt = quotes[emotion]?.get(i)
                 textResult.text = txt
 

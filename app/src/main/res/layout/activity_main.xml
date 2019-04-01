@@ -11,11 +11,13 @@
         android:id="@+id/cameraView"
         android:layout_width="match_parent"
         android:layout_height="@dimen/camera_height"
+        android:layout_marginTop="4dp"
         android:paddingBottom="@dimen/standard_padding"
         app:ckDoubleTapToToggleFacing="true"
         app:ckFocus="tapWithMarker"
         app:ckMethod="still"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,20 +54,20 @@
     <Button
         android:id="@+id/buttonRecognize"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="54dp"
         android:enabled="false"
-        android:text="@string/btn_recognize_text"
+        android:text="Captionify!"
         android:textSize="@dimen/result_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton"
+    <Switch
+        android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ToggleButton"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="367dp" />
+        android:text=""
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="382dp" />
 
 </android.support.constraint.ConstraintLayout>
