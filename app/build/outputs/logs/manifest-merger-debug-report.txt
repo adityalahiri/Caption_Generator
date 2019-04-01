@@ -60,7 +60,7 @@ MERGED from [org.tensorflow:tensorflow-android:1.5.0] /home/arrayslayer/.gradle/
 	android:label
 		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:11:9-41
 	android:roundIcon
-		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:12:9-54
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:12:9-48
 	android:icon
 		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:10:9-43
 	android:allowBackup
