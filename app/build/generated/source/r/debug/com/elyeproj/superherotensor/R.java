@@ -3061,12 +3061,13 @@ public final class R {
     public static final int abc_toolbar_collapse_description=0x7f0b001c;
     public static final int app_name=0x7f0b001d;
     public static final int btn_recognize_text=0x7f0b001e;
-    public static final int result_confident_hero_found=0x7f0b001f;
-    public static final int result_maybe_hero_found=0x7f0b0020;
-    public static final int result_no_hero_found=0x7f0b0021;
-    public static final int result_think_hero_found=0x7f0b0022;
-    public static final int search_menu_title=0x7f0b0023;
-    public static final int status_bar_notification_info_overflow=0x7f0b0024;
+    public static final int facebook_app_id=0x7f0b001f;
+    public static final int result_confident_hero_found=0x7f0b0020;
+    public static final int result_maybe_hero_found=0x7f0b0021;
+    public static final int result_no_hero_found=0x7f0b0022;
+    public static final int result_think_hero_found=0x7f0b0023;
+    public static final int search_menu_title=0x7f0b0024;
+    public static final int status_bar_notification_info_overflow=0x7f0b0025;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0c0000;

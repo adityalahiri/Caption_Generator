@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-26:12
+ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-25:12
 MERGED from [com.wonderkiln:camerakit:0.13.1] /home/arrayslayer/.gradle/caches/transforms-1/files-1.1/camerakit-0.13.1.aar/0dd92096bc1347de522dce1a50f77772/AndroidManifest.xml:2:1-27:12
 MERGED from [com.android.support:appcompat-v7:27.0.2] /home/arrayslayer/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/2589f9b0d45476ad45900c38f8791e35/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/arrayslayer/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/2e449899ca31f63ac2aca17fd31c1a63/AndroidManifest.xml:2:1-11:12
@@ -16,20 +16,20 @@ MERGED from [com.android.support:support-core-ui:27.0.2] /home/arrayslayer/.grad
 MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/arrayslayer/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/9def2482a9608132871c4670f33af389/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.0.2] /home/arrayslayer/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/fff53e7605d98b4a2968bcbe46cbbc35/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/arrayslayer/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/484207d52a3e61bfdfa45923f2cc6375/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-25:12
 	package
 		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:3:5-43
 		INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml
 		INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml
-		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-26:12
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-25:12
 		INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml
-		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-26:12
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-25:12
 		INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:11-69
@@ -43,8 +43,12 @@ uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:6:5-80
 	android:name
 		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:6:22-77
+uses-permission#android.permission.INTERNET
+ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:7:5-66
+	android:name
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:7:22-64
 application
-ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:7:5-23:19
+ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:8:5-24:19
 MERGED from [com.wonderkiln:camerakit:0.13.1] /home/arrayslayer/.gradle/caches/transforms-1/files-1.1/camerakit-0.13.1.aar/0dd92096bc1347de522dce1a50f77772/AndroidManifest.xml:25:5-20
 MERGED from [com.wonderkiln:camerakit:0.13.1] /home/arrayslayer/.gradle/caches/transforms-1/files-1.1/camerakit-0.13.1.aar/0dd92096bc1347de522dce1a50f77772/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/arrayslayer/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/2e449899ca31f63ac2aca17fd31c1a63/AndroidManifest.xml:9:5-20
@@ -52,33 +56,39 @@ MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/array
 MERGED from [org.tensorflow:tensorflow-android:1.5.0] /home/arrayslayer/.gradle/caches/transforms-1/files-1.1/tensorflow-android-1.5.0.aar/8cc7e523025594b60c6707f0cf880a99/AndroidManifest.xml:5:5-6:19
 MERGED from [org.tensorflow:tensorflow-android:1.5.0] /home/arrayslayer/.gradle/caches/transforms-1/files-1.1/tensorflow-android-1.5.0.aar/8cc7e523025594b60c6707f0cf880a99/AndroidManifest.xml:5:5-6:19
 	android:supportsRtl
-		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:11:9-41
 	android:roundIcon
-		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:12:9-54
 	android:icon
-		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:10:9-43
 	android:allowBackup
-		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:8:9-35
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:13:9-40
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:14:9-40
 activity#com.elyeproj.superherotensor.MainActivity
-ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:14:9-21:20
+ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:15:9-22:20
 	android:screenOrientation
-		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:16:13-49
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:17:13-49
 	android:name
-		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:15:13-41
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:16:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:17:13-20:29
+ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:18:13-21:29
 action#android.intent.action.MAIN
-ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:18:17-69
+ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:19:17-69
 	android:name
-		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:18:25-66
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:19:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:19:17-77
+ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:19:27-74
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:20:27-74
+meta-data#com.facebook.sdk.ApplicationId
+ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:23:9-107
+	android:value
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:23:66-105
+	android:name
+		ADDED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:23:20-65
 uses-sdk
 INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml
@@ -146,4 +156,4 @@ ADDED from [com.wonderkiln:camerakit:0.13.1] /home/arrayslayer/.gradle/caches/tr
 	android:name
 		ADDED from [com.wonderkiln:camerakit:0.13.1] /home/arrayslayer/.gradle/caches/transforms-1/files-1.1/camerakit-0.13.1.aar/0dd92096bc1347de522dce1a50f77772/AndroidManifest.xml:22:9-51
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-26:12 reason: tensorflow.contrib.android has a targetSdkVersion < 4
+IMPLIED from /home/arrayslayer/AndroidStudioProjects/demo_android_tensorflow/app/src/main/AndroidManifest.xml:2:1-25:12 reason: tensorflow.contrib.android has a targetSdkVersion < 4

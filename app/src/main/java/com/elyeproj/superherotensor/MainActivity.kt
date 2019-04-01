@@ -74,6 +74,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -168,7 +170,7 @@ class MainActivity : AppCompatActivity() {
         val bitmap = Bitmap.createScaledBitmap(it.bitmap, INPUT_WIDTH, INPUT_HEIGHT, false)
         showCapturedImage(bitmap)
 
-        saveImageToExternalStorage(bitmap)
+        saveImageToExternalStorage(it.bitmap)
 
 
         classifier?.let {
@@ -226,7 +228,18 @@ class MainActivity : AppCompatActivity() {
                 val emotion = results[0].title
                 val confidence = results[0].confidence
                 val i = Math.random().toInt() * 5
-                textResult.text = quotes[emotion]?.get(i)
+                val txt = quotes[emotion]?.get(i)
+                textResult.text = txt
+
+                val sendIntent: Intent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_TEXT,txt )
+                    type = "text/plain"
+
+                }
+                startActivity(Intent.createChooser(sendIntent, "None"))
+
+
             }
         }
     }

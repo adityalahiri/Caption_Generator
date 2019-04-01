@@ -5,4 +5,5 @@
     <string name="result_confident_hero_found">This is surely %1$s.</string>
     <string name="result_think_hero_found">I think I see %1$s.</string>
     <string name="result_maybe_hero_found">Hmm, is this %1$s?</string>
+    <string name="facebook_app_id">323199698339436</string>
 </resources>
